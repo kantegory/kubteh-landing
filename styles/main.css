@@ -14,6 +14,11 @@ body {
   overflow-x: hidden;
 }
 
+.link--unstyled {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
 /* common styles */
 body {
   color: var(--secondary);
