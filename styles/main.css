@@ -242,6 +242,13 @@ section,
 }
 
 .card-desc {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 380px);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.card-desc {
   margin: auto;
   justify-content: center;
   margin-top: 1rem;
@@ -257,14 +264,6 @@ section,
   margin-left: 1rem;
   margin-right: 1rem;
   position: relative;
-}
-
-.card:first-child {
-  margin-left: 0;
-}
-
-.card:last-child {
-  margin-right: 0;
 }
 
 .card__image img {
@@ -315,6 +314,13 @@ section,
 }
 
 /* main why */
+.why-card-desc {
+  display: grid;
+  grid-template-columns: repeat(2, 585px);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem
+}
+
 .main__why .phrase__wrapper .desc {
   width: max-content;
 }
@@ -500,4 +506,396 @@ section.main__why {
 
 .footer__address {
   justify-content: space-between;
+}
+
+/* flexibility */
+/*--lgDesktopWidth: 1537px;*/
+/*--desktopWidth: 1281px;*/
+/*--smDesktopWidth: 1025px;*/
+/*--tableWidth: 769px;*/
+/*--smTableWidth: 641px;*/
+/*--phoneWidth: 481px;*/
+/*--smPhoneWidth: 321px;*/
+
+@media (min-width: 1281px) and (max-width: 1537px) {
+  .header__banner {
+    background-size: cover;
+  }
+
+  .why-banner__wrapper {
+    max-width: 1536px;
+    min-width: 1281px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1281px) {
+  :root {
+    --standardContainer: 85%;
+  }
+
+  .why-banner__wrapper {
+    max-width: 1281px;
+    min-width: 1025px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  :root {
+    --standardContainer: 95%;
+  }
+
+  .why-banner__wrapper {
+    max-width: 1025px;
+    min-width: 769px;
+    width: 100%;
+  }
+
+  .phrase {
+    left: -5%
+  }
+
+  .card-desc {
+    grid-template-columns: repeat(2, 380px);
+    grid-template-rows: repeat(3, 1fr)
+  }
+
+  .why-card-desc {
+    display: grid;
+    grid-template-columns: 585px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1rem
+  }
+
+
+  .why-banner__wrapper {
+    height: 1800px;
+  }
+
+  .why__banner-sticker {
+    height: 220px;
+  }
+
+  .sticker__wrapper {
+    top: -5%
+  }
+}
+
+@media (min-width: 319px) and (max-width: 769px) {
+
+  .main__what .card,
+  .main__what .card__image img {
+    max-width: calc(380px * 0.75);
+    max-height: calc(290px * 0.75);
+  }
+
+  .card__shadow {
+    width: calc(380px * 0.75)
+  }
+
+  .card-desc {
+    grid-template-columns: repeat(2, calc(380px * 0.75))
+  }
+
+  .heading {
+    font-size: 30px
+  }
+
+  .why-desc {
+    font-size: 16px;
+    width: 100%
+  }
+
+  .header__sticker {
+    min-width: 481px;
+    width: 100%;
+    max-width: 768px;
+  }
+
+  .header__logo img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .main__about {
+    flex-flow: column-reverse;
+  }
+
+  .contacts__action {
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contacts {
+    height: 180px;
+    min-width: 481px;
+    max-width: 768px;
+    width: 100%;
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+  .contacts__sticker {
+    top: 0
+  }
+
+  .contacts__banner {
+    display: none;
+  }
+
+  .contacts__sticker {
+    position: static;
+    max-width: 768px;
+    min-width: 481px;
+    width: 100%
+  }
+
+  .why__banner-sticker:first-child {
+    right: calc(10% + 220px + 5%);
+  }
+
+  .why__banner-sticker:first-child .heading {
+    margin-bottom: 3rem;
+  }
+
+  .why__banner-sticker {
+    width: 220px
+  }
+
+  .why__banner-sticker .heading {
+    font-size: 26px;
+  }
+
+  .how-wrapper {
+    flex-direction: column;
+  }
+
+  .how-desc,
+  .how-wrapper .list-numeric {
+    width: var(--standardContainer);
+  }
+
+  .main__how .phrase__wrapper .desc,
+  .main__why .phrase__wrapper .desc {
+    max-width: calc(100vw - 10%);
+  }
+
+  .main__how {
+    height: 860px;
+  }
+
+  .list-item__link {
+    font-size: 20px;
+  }
+
+  .footer__list {
+    flex-direction: row;
+    margin: auto;
+    position: static;
+    transform: unset;
+  }
+
+  .footer__list .list-item:last-child {
+    margin-left: 1rem;
+  }
+
+  .footer__address {
+    margin: auto
+  }
+}
+
+@media (min-width: 319px) and (max-width: 641px) {
+  .why-card-desc {
+    grid-template-columns: calc(585px * 0.75);
+  }
+
+  .why-card-desc .card {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .why-banner__wrapper {
+    max-width: 640px;
+    min-width: 481px;
+    width: 100%;
+  }
+
+  .card-desc {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center
+  }
+
+  .card-desc .card:first-child {
+    height: 120px;
+  }
+
+  .main__what .card,
+  .main__what .card__image img {
+    max-width: 380px;
+    max-height: 290px;
+  }
+
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    margin: auto
+  }
+
+  .footer__list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .list-item__link {
+    font-size: 20px
+  }
+
+  .menu__list .list-item:first-child {
+    margin-right: 1rem
+  }
+
+  .contacts,
+  .contacts__sticker {
+    max-width: 480px;
+    min-width: 320px;
+  }
+
+  .why-card-desc .card {
+    max-width: 480px;
+    min-width: 320px;
+  }
+
+  .why-banner__cards .card {
+    margin: 0;
+  }
+
+  .why__banner-sticker {
+    position: static;
+    max-width: 220px;
+    width: 100%;
+    min-width: 150px;
+  }
+
+  .sticker__wrapper {
+    justify-content: space-around;
+  }
+
+  .why__banner-sticker .heading {
+    font-size: 20px;
+  }
+
+  .how-gear {
+    display: none;
+  }
+
+  .main__how {
+    position: static;
+    height: unset;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+}
+
+.why-desc p {
+  display: none;
+}
+
+@media (min-width: 319px) and (max-width: 415px) {
+  .why-card-desc {
+    grid-template-columns: 300px;
+  }
+
+  .why-banner__wrapper {
+    max-width: 100vw;
+    min-width: 320px;
+    width: 100%;
+  }
+
+  .why-card-desc .card {
+    min-width: 300px;
+    height: 500px;
+  }
+
+  .why-banner__wrapper {
+    height: 2300px;
+  }
+
+  .card-desc .card,
+  .card__shadow {
+    width: 300px;
+  }
+
+  .card-desc .card:first-child {
+    height: 145px;
+  }
+
+  .main__what .card,
+  .main__what .card__image img {
+    height: 230px
+  }
+
+  .why-desc p {
+    display: unset;
+  }
+
+  .sticker__wrapper {
+    display: none;
+  }
+
+  .why-banner__wrapper {
+    margin-top: 1rem
+  }
+
+  .phrase {
+    font-size: 100px
+  }
+
+  .header__banner {
+    background-size: cover;
+  }
+
+  .header__sticker {
+    min-width: 320px;
+    max-width: 100vw;
+  }
+
+  .menu__list {
+    flex-direction: column;
+  }
+
+  .menu__list .list-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .contacts,
+  .contacts__sticker {
+    min-width: 300px
+  }
+
+  .contacts .sticker-text {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .desc,
+  .main__what .phrase__wrapper .desc {
+    width: 300px
+  }
+
+  .how-wrapper .list-numeric {
+    padding: 0;
+  }
+
 }
