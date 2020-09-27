@@ -26,7 +26,7 @@ const validateEmail = (email) => {
   return re.test(email);
 }
 
-sendRequestBtn.addEventListener('click', (event) => {
+sendRequestBtn.addEventListener('click', async (event) => {
   // cancel form submitting
   event.preventDefault();
 
@@ -37,8 +37,7 @@ sendRequestBtn.addEventListener('click', (event) => {
   let message = form.querySelector('[name="message-text"]');
 
   let formData = { name: name.value, email: email.value, phone: phone.value, message: message.value };
-
-  console.log(formData);
+  formData = JSON.stringify(formData);
 
   // check is email valid
   let isEmailValid = validateEmail(email.value);
@@ -55,4 +54,21 @@ sendRequestBtn.addEventListener('click', (event) => {
     showErr(message, "Поле Сообщение обязательно к заполнению");
   }
 
+  // sending form
+  let result = await fetch("https://push.kubteh.ru/lp/mailer/sendmsg", {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: formData,
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin'
+  });
+
+  result = await result.json();
+
+  if (result.success) {
+    // success logic is there
+  }
 })
