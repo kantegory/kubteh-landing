@@ -220,6 +220,9 @@
     </section>
   </main>
   <!-- modal -->
+  <!-- modal shadow background -->
+  <div class="shadow"></div>
+  <!-- end shadow background -->
   <div class="modal fade show" id="sendRequest" tabindex="-1" role="dialog" aria-labelledby="sendRequestModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -232,20 +235,29 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Имя:</label>
-              <input type="text" class="form-control" id="recipient-name" placeholder="Иванов Иван">
+              <label for="recipient-name" class="col-form-label">
+                <span class="icon"><img src="./assets/icons/name.svg" alt=""></span>
+                Имя:
+              </label>
+              <input type="text" class="form-control" id="recipient-name" placeholder="Иванов Иван" required="">
             </div>
             <div class="form-group">
-              <label for="recipient-phone" class="col-form-label">Телефон:</label>
-              <input type="text" class="form-control" id="recipient-phone" placeholder="+7 9XX XXXXXXX">
+              <label for="recipient-phone" class="col-form-label">
+                <span class="icon"><img src="./assets/icons/phone-call.svg" alt=""></span>
+                Телефон:
+              </label>
+              <input type="text" class="form-control" id="recipient-phone" placeholder="+7 9XX XXXXXXX" required="">
             </div>
             <div class="form-group">
-              <label for="recipient-email" class="col-form-label">Email:</label>
-              <input type="email" class="form-control" id="recipient-email" placeholder="ivanov@example.com">
+              <label for="recipient-email" class="col-form-label">
+                <span class="icon"><img src="./assets/icons/email.svg" alt=""></span>
+                Email:
+              </label>
+              <input type="email" class="form-control" id="recipient-email" placeholder="ivanov@example.com" required="">
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Сообщение:</label>
-              <textarea class="form-control" id="message-text" placeholder="Мне нужно..."></textarea>
+              <textarea class="form-control" id="message-text" placeholder="Мне нужно..." required=""></textarea>
             </div>
           </form>
         </div>
