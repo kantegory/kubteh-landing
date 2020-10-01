@@ -344,8 +344,18 @@ button {
   font-size: 20px;
 }
 
+.col-form-label {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+}
+
 .icon img {
   width: 16px;
+  margin: auto;
+  margin-right: 5px;
 }
 
 .error {
